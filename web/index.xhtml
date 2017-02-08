@@ -24,7 +24,7 @@
                 <h:commandButton value="Add New" action="#{posts.addPost()}" />
             </c:if>
             <c:if test="#{!login.loggedIn}">
-                <h:commandButton value="Login" action="login" />
+                <h:button value="Login" outcome="login" />
             </c:if>
         </h:form>
     </h:body>

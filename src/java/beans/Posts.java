@@ -15,19 +15,19 @@
  */
 package beans;
 
-import javax.faces.bean.ApplicationScoped;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.faces.bean.ManagedBean;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Named;
 
 /**
  *
  * @author Len Payne <len.payne@lambtoncollege.ca>
  */
-@ManagedBean
+@Named
 @ApplicationScoped
 public class Posts {
 

@@ -71,9 +71,9 @@ public class DBUtils {
         }
         String hostname = "IPRO";
         String port = "3306";
-        String dbname = "simpleblog";
-        String username = "simpleblog";
-        String password = "February2016";
+        String dbname = "JSFBlog";
+        String username = "JSFBlog";
+        String password = "Feb2017";
         String jdbc = String.format("jdbc:mysql://%s:%s/%s", hostname, port, dbname);
         return DriverManager.getConnection(jdbc, username, password);
     }

@@ -15,9 +15,9 @@
                 <h:commandButton value="Edit" action="#{posts.editPost()}" />
             </c:if>
             <c:if test="#{!login.loggedIn}">
-                <h:commandButton value="Login" action="login" />
+                <h:button value="Login" outcome="login" />
             </c:if>
-            <h:commandButton value="Return" action="index" />
+            <h:button value="Return" outcome="index" />
         </h:form>
     </h:body>
 </html>
