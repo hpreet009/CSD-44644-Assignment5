@@ -8,26 +8,28 @@
         <title>Simple Blog</title>
     </h:head>
     <h:body style="background-color:Tan;">
+        <h:panelGroup style="display: block; text-align: center">
+            <h:form>
 
-        <h:form>
-            <h:dataTable value="#{posts.posts}" var="post">
-                <h:column>
-                    <h:commandLink action="#{posts.viewPost(post)}">#{post.title}</h:commandLink>
-                </h:column>
-                <h:column>
-                    #{users.getUsernameById(post.user_id)}
-                </h:column>
-                <h:column>
-                    #{post.createdTime.toLocaleString()}
-                </h:column>
-            </h:dataTable>
-            <c:if test="#{login.loggedIn}">
-                <h:commandButton value="Add New" action="#{posts.addPost()}" />
-            </c:if>
-            <c:if test="#{!login.loggedIn}">
-                <h:button value="Login" outcome="login" />
-            </c:if>
-        </h:form>
+                <h:dataTable value="#{posts.posts}" var="post">
+                    <h:column>
+                        <h:commandLink action="#{posts.viewPost(post)}">#{post.title}</h:commandLink>
+                    </h:column>
+                    <h:column>
+                        #{users.getUsernameById(post.user_id)}
+                    </h:column>
+                    <h:column>
+                        #{post.createdTime.toLocaleString()}
+                    </h:column>
+                </h:dataTable>
+                <c:if test="#{login.loggedIn}">
+                    <h:commandButton value="Add New" action="#{posts.addPost()}" />
+                </c:if>
+                <c:if test="#{!login.loggedIn}">
+                    <h:button value="Login" outcome="login" />
+                </c:if>
+            </h:form>
+        </h:panelGroup>
     </h:body>
 </html>
 

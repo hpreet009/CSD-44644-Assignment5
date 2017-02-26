@@ -8,13 +8,15 @@
     </h:head>
     <h:body style="background-color:MistyRose ;">
         <h:form>
+            <h:panelGroup style="display: block; text-align: center">
             <c:if test="#{login.loggedIn}">
                 <p>Title: <h:inputText value="#{posts.currentPost.title}" /></p>
-                <p><h:inputTextarea value="#{posts.currentPost.contents}" /></p>
+                <p>Content:<h:inputTextarea value="#{posts.currentPost.contents}" /></p>
                 <h:commandButton value="Save" action="#{posts.savePost(login.currentUser)}" />                
             </c:if>
             <c:if test="#{!login.loggedIn}"><h1>Must be Logged In to Add or Edit</h1></c:if>
             <h:commandButton value="Cancel" action="#{posts.cancelPost}" />
+            </h:panelGroup>
         </h:form>
     </h:body>
 </html>

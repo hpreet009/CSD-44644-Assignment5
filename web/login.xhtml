@@ -7,9 +7,11 @@
     </h:head>
     <h:body style="background-color:#C0C0C0;">
         <h:form>
+            <h:panelGroup style="display: block; text-align: center">
             <p>Username: <h:inputText value="#{login.username}" /></p>
             <p>Password: <h:inputSecret value="#{login.password}" /></p>
             <h:commandButton value="Login" action="#{login.login()}" />
+            </h:panelGroup>
         </h:form>
     </h:body>
 </html>
