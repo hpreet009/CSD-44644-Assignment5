@@ -190,4 +190,27 @@ public class Posts {
         currentPost = getPostByTitle(currentPost.getTitle());
         return "viewPost";
     }
+
+    /**
+     *
+     * @return
+     */
+    public String deletePost() throws SQLException {
+        try (Connection conn = DBUtils.getConnection()) {
+            // Deleting aa post b user who is logged In 
+            int id = currentPost.getId();
+            if (currentPost.getId() >= 0) {
+                String sql = "DELETE FROM Posts WHERE id= "+id;
+                PreparedStatement pstmt = conn.prepareStatement(sql);
+                pstmt.executeUpdate();
+            }
+            else{
+                
+            }
+            getPostsFromDB();
+            // return index page
+            return "index";
 }
+}
+}
+     
